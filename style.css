@@ -13,7 +13,7 @@
     --base-color: #121212;
     --primary-color: #192734;
     --secondary-color: #03DAC5;
-    --h1-color: white;
+    --h1-color: #F8F8F8;
     --start-color: #28a745;
     --stop-color: #dc3545;
     --reset-color: #007bff;
@@ -21,8 +21,10 @@
 }
 
 .dark article {
-    box-shadow: 10px 10px;
+    box-shadow: 0 1rem 1rem rgba(255, 255, 255, 0.15); /* White shadow */
+    background-color: var(--h1-color); /* Ensure the background color is set appropriately */
 }
+
 .dark #js--start {
     background-color: var(--start-color);
 }
