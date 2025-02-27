@@ -1,0 +1,173 @@
+:root {
+    --base-color: white;
+    --primary-color: #007bff;
+    --secondary-color: #6c757d;
+    --success-color: #28a745;
+    --start-color: #17a2b8;
+    --reset-color: #007bff;
+    --stop-color: #dc3545;
+}
+
+/* Dark Mode */
+.dark {
+    --base-color: #121212;
+    --primary-color: #192734;
+    --secondary-color: #03DAC5;
+    --h1-color: white;
+    --start-color: #28a745;
+    --stop-color: #dc3545;
+    --reset-color: #007bff;
+    margin-top: -10rem;
+}
+
+.dark #js--start {
+    background-color: var(--start-color);
+}
+
+.dark #js--stop {
+    background-color: var(--stop-color);
+}
+
+.dark #js--reset {
+    background-color: var(--reset-color);
+}
+
+.dark h1 {
+    color: var(--h1-color)
+}
+
+.dark span {
+    color: black;
+}
+/* End Dark Mode */
+
+body {
+    background-color: var(--base-color);
+    color: var(--text-color);
+    font-size: 2rem;
+    font-family: 'Poppins', sans-serif;
+    padding: 5rem;
+}
+
+.container {
+    display: flex;
+    flex-direction: row; 
+    justify-content: space-between;
+    align-items: flex-start;
+    height: 100vh;
+    padding: 2rem;
+}
+
+article {
+    border-radius: 2.3rem;
+    text-align: center;
+    background: #f4f4f4;
+    padding: 5rem;
+    box-shadow: 0 1rem 1rem rgba(0, 0, 0, 0.15);
+    height: 20rem;
+    margin-top:13rem;
+}
+
+#left-article, #right-article {
+    margin-top: 7rem;
+    width: 30%;
+    height: auto;
+    padding: 2rem;
+}
+
+#history {
+    text-align: left;
+    font-size: 1.5rem;
+    margin-top: 2rem;
+    margin-left: 2rem;
+}
+
+#lap {
+    text-align: left;
+    font-size: 1.5rem;
+    margin-top: 2rem;
+}
+
+button { 
+    border: black 3px solid;
+    padding: 5rem;
+    border-radius: 1rem;
+    cursor: pointer;
+    height: 10rem;
+    width: 10rem;
+}
+
+div {
+    margin-bottom: 2rem;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+#js--start {
+    background-color: var(--success-color);
+    color: white;
+    border: none;
+    padding: 1rem 2rem;
+    font-size: 1.5rem;
+    border-radius: 0.5rem;
+    cursor: pointer;
+}
+
+#js--start:hover {
+    background-color: #218838;
+}
+
+#js--stop {
+    background-color: var(--stop-color);
+    color: white;
+    border: none;
+    padding: 1rem 2rem;
+    font-size: 1.5rem;
+    border-radius: 0.5rem;
+    cursor: pointer;
+}
+
+#js--stop:hover {
+    background-color: #c82333;
+}
+
+#js--reset {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 1rem 2rem;
+    font-size: 1.5rem;
+    border-radius: 0.5rem;
+    cursor: pointer;
+}
+
+#js--reset:hover {
+    background-color: #0069d9;
+}
+
+#js--lap {
+    background-color: #20c997;
+    color: white;
+    border: none;
+    padding: 1rem 2rem;
+    font-size: 1.5rem;
+    border-radius: 1.2rem;
+    cursor: pointer;
+}
+
+#js--lap:hover {
+    background-color: #17a2b8;
+}
+
+span {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #333;
+    margin: 2rem 0;
+}
+
+h1 {
+    font-size: 5rem;
+    text-align: center;
+}
