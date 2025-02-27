@@ -20,6 +20,9 @@
     margin-top: -10rem;
 }
 
+.dark article {
+    box-shadow: 10px 10px;
+}
 .dark #js--start {
     background-color: var(--start-color);
 }
@@ -47,6 +50,7 @@ body {
     font-size: 2rem;
     font-family: 'Poppins', sans-serif;
     padding: 5rem;
+    padding-top: 8.5rem;
 }
 
 .container {
@@ -58,32 +62,40 @@ body {
     padding: 2rem;
 }
 
+#left-article, #right-article {
+    margin-top: -1rem;
+    width: 30%;
+    height: auto;
+    padding: 1.5rem;
+    margin-right: 1rem;
+    margin-left: 1rem;
+}
+
 article {
     border-radius: 2.3rem;
     text-align: center;
     background: #f4f4f4;
     padding: 5rem;
     box-shadow: 0 1rem 1rem rgba(0, 0, 0, 0.15);
-    height: 20rem;
-    margin-top:13rem;
+    height: 35%;
+    margin-top: 3.5rem;
+    width: 30%;
 }
 
-#left-article, #right-article {
-    margin-top: 7rem;
-    width: 30%;
-    height: auto;
-    padding: 2rem;
+#history div, #lap div {
+    text-align: center;
+    font-size: 1.2rem; 
+    margin-bottom: 0.5rem;
 }
 
 #history {
-    text-align: left;
+    text-align: center;
     font-size: 1.5rem;
     margin-top: 2rem;
     margin-left: 2rem;
 }
 
 #lap {
-    text-align: left;
     font-size: 1.5rem;
     margin-top: 2rem;
 }
@@ -93,8 +105,9 @@ button {
     padding: 5rem;
     border-radius: 1rem;
     cursor: pointer;
-    height: 10rem;
-    width: 10rem;
+    height: 30%;
+    width: 70%;
+    margin: 0.2rem;
 }
 
 div {
@@ -102,6 +115,7 @@ div {
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    font-size: 2rem;
 }
 
 #js--start {
@@ -170,4 +184,8 @@ span {
 h1 {
     font-size: 5rem;
     text-align: center;
+}
+
+h2 {
+    font-size: 2.2rem;
 }
