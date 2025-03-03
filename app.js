@@ -27,7 +27,7 @@ startButton.onclick = function() {
             seconds = 0;
         }
         secondsTimer.innerText = seconds;
-    }, 1000); // 1000 ms is 1 sec
+    }, 100); // 1000 ms is 1 sec
 }  
 
 stopButton.onclick = function() {
