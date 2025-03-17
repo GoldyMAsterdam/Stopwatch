@@ -10,12 +10,14 @@
     <script src="app.js" defer></script>
     <title>Stopwatch</title>
 </head>
-<body class="dark">
+<body id="js--body" class="dark">
     <h1>Stopwatch</h1>
     <div class="container">
         <article id="left-article">
-            <h2>History</h2>
-            <div id="history"></div>
+            <h2 id="js--RangeValue">0</h2>
+            <div class="slidecontainer">   
+                <input id="js--slider" type="range" min="1" max="4" step="1" value="50" class="slider" id="myRange" step="1">
+            </div>
         </article>
         <article>
             <div>
@@ -28,10 +30,22 @@
             <button id="js--reset">Reset</button>
         </article>
         <article id="right-article">
-            <h2>Lap</h2>
-            <div id="lap"></div>
-            <button id="js--lap">Lap</button>
+            <h2>-</h2>
+            <div></div>
         </article>
     </div>
 </body>
 </html>
+
+
+<!-- Stappenplan slider:
+
+Onderzoek hoe ik een slider maak
+Onderzoeken hoe we een slider instellen (minimale waarde, maximale en stapgrote)
+De waarde van de slider in de tegel
+De waarde zijn van de slider in de tegel
+De waarde zien veranderen als ik de slider beweeg 
+Slider stijlen
+Inzoomen of uitzoomen van lettergrootte op basis van waarde
+
+-->

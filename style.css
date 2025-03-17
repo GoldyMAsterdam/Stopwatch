@@ -52,23 +52,66 @@ body {
     font-family: 'Poppins', sans-serif;
 }
 
+html {
+    font-size: 62.5%;
+}
+
 .container {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
     align-items: flex-start;
     height: 100vh;
     padding: 2rem;
 }
 
 #left-article, #right-article {
-    margin-top: -1rem;
-    width: 30%;
-    height: auto;
+    width: 25%;
+    height: 50%;
     padding: 1.5rem;
     margin-right: 1rem;
     margin-left: 1rem;
     padding-right: 3rem;
+}
+
+#left-article {
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+#left-article > h2 {
+    font-size: 4rem;
+    margin-top: 16rem;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+#js--slider {
+    -webkit-appearance: none;
+    appearance: none;
+    border-radius: 2rem;
+    width: 80%; 
+    height: 2.2rem;
+    background: linear-gradient(to right, #feac5e, #c779d0, #4bc0c8);
+    margin: 0 auto;
+}
+
+#js--slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    background: linear-gradient(to right, #feac5e, #c779d0, #4bc0c8);
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+#js--slider::-moz-range-thumb {
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    background: linear-gradient(to right, #feac5e, #c779d0, #4bc0c8);
+    cursor: pointer;
 }
 
 article {
@@ -76,28 +119,12 @@ article {
     text-align: center;
     padding: 5rem;
     box-shadow: 0 1rem 1rem rgba(0, 0, 0, 0.15);
-    height: 35%;
+    height: 50%;
     margin-top: 2rem;
-    width: 30%;
-}
-
-#history div, #lap div {
-    text-align: center;
-    font-size: 1rem;
-    margin-bottom: 0.5rem;
-    font-weight: 500;
-}
-
-#history {
-    text-align: center;
-    font-size: 1.5rem;
-    margin-top: 2rem;
-    margin-left: 2rem;
-}
-
-#lap {
-    font-size: 1.5rem;
-    margin-top: 2rem;
+    width: 25%;
+    flex-shrink: 0;
+    margin-right: 3rem;
+    margin-left: 3rem;
 }
 
 button {
@@ -105,7 +132,7 @@ button {
     border-radius: 1rem;
     cursor: pointer;
     height: 30%;
-    width: 70%;
+    width: 30%;
     margin: 0.2rem;
 }
 
@@ -173,7 +200,7 @@ div {
 }
 
 span {
-    font-size: 2rem;
+    font-size: 2.6rem;
     font-weight: bold;
     color: #333;
     margin: 2rem 0;
