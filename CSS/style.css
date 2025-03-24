@@ -114,6 +114,32 @@ html {
     cursor: pointer;
 }
 
+.tip-image {
+    max-width: 100%;
+    border-radius: 1rem;
+    margin-top: 1.5rem;
+    height: auto;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    max-height: 150px;
+    object-fit: cover;
+}
+
+#right-article {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+#right-article > div {
+    margin-bottom: 1rem;
+}
+
+.dark .tip-image {
+    box-shadow: 0 0.5rem 0.5rem rgba(255, 255, 255, 0.1);
+}
+
 article {
     border-radius: 1.6rem;
     text-align: center;
