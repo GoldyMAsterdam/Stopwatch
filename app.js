@@ -82,23 +82,18 @@ const contentData = [
     }
 ];
 
-// Function to load dynamic content (without images)
 function loadDynamicContent() {
     const rightArticle = document.getElementById("right-article");
     const rightArticleTitle = rightArticle.querySelector("h2");
     const rightArticleDiv = rightArticle.querySelector("div");
     
-    // Select a random content item
     const randomIndex = Math.floor(Math.random() * contentData.length);
     const contentItem = contentData[randomIndex];
     
-    // Update the title
     rightArticleTitle.textContent = contentItem.title;
     
-    // Clear existing content
     rightArticleDiv.innerHTML = "";
     
-    // Create and add text
     const p = document.createElement("p");
     p.textContent = contentItem.text;
     p.style.fontSize = "1.6rem";
@@ -107,8 +102,6 @@ function loadDynamicContent() {
     rightArticleDiv.appendChild(p);
 }
 
-// Load content when page loads
 document.addEventListener("DOMContentLoaded", loadDynamicContent);
 
-// Change content when reset button is clicked
 resetButton.addEventListener("click", loadDynamicContent);
