@@ -11,14 +11,26 @@ const RangeValue = document.getElementById("js--RangeValue");
 const slider = document.getElementById("js--slider");
 const body = document.getElementById("js--body");
 
-console.log(body);
 slider.value = 2;
 RangeValue.innerText = slider.value + "x";
 
+const savedFontSize = localStorage.getItem("sliderValue");
+if (savedFontSize) {
+    slider.value = savedFontSize;
+    RangeValue.innerText = slider.value + "x";
+    updateFontSize(savedFontSize);
+}
+
 slider.addEventListener("input", function() {
-    localStorage.setItem("sliderValue", slider.value);
-    RangeValue.innerText = slider.value;
+    const value = slider.value;
+    localStorage.setItem("sliderValue", value);
+    RangeValue.innerText = value + "x";
+    updateFontSize(value);
 });
+
+function updateFontSize(size) {
+    document.documentElement.style.fontSize = (62.5 * size / 2) + "%";
+}
 
 startButton.onclick = function() {
     if (running === true) {
@@ -29,11 +41,11 @@ startButton.onclick = function() {
         seconds = seconds + 1;
         if (seconds === 60) {
             minutes = minutes + 1;
-            minutesTimer.innerText = minutes;
+            minutesTimer.innerText = minutes < 10 ? "0" + minutes : minutes;
             seconds = 0;
         }
-        secondsTimer.innerText = seconds;
-    }, 100); // 100 ms is 1/10 sec
+        secondsTimer.innerText = seconds < 10 ? "0" + seconds : seconds;
+    }, 100);
 }
 
 stopButton.onclick = function() {
@@ -44,46 +56,29 @@ stopButton.onclick = function() {
 resetButton.onclick = function() {
     clearInterval(timer);
     running = false;
-    const currentMinutes = minutes;
-    const currentSeconds = seconds;
     seconds = 0;
     minutes = 0;
-    secondsTimer.innerText = seconds;
-    minutesTimer.innerText = minutes;
+    secondsTimer.innerText = "00";
+    minutesTimer.innerText = "00";
     loadDynamicContent();
 }
 
-slider.oninput = function() {
-    RangeValue.innerText = slider.value + "x";
-    body.style.fontSize = slider.value + "rem";
-}
-
-// Load content data from JSON file
 let contentData = [];
-
 function loadDynamicContent() {
     const rightArticle = document.getElementById("right-article");
     const rightArticleTitle = rightArticle.querySelector("h2");
     const rightArticleDiv = rightArticle.querySelector("div");
     const tipImage = document.getElementById("js--tip-image");
-
     const randomIndex = Math.floor(Math.random() * contentData.length);
     const contentItem = contentData[randomIndex];
-
     rightArticleTitle.textContent = contentItem.title;
     rightArticleDiv.innerHTML = "";
-
     const p = document.createElement("p");
     p.textContent = contentItem.text;
-    p.style.fontSize = "1.6rem";
-    p.style.lineHeight = "1.5";
-    p.style.textAlign = "left";
-
     rightArticleDiv.appendChild(p);
     tipImage.src = contentItem.image;
 }
 
-// Fetch JSON data when the page loads
 document.addEventListener("DOMContentLoaded", () => {
     fetch('content.json')
         .then(response => {
@@ -98,7 +93,6 @@ document.addEventListener("DOMContentLoaded", () => {
         })
         .catch(error => {
             console.error('There was a problem fetching the content data:', error);
-            // Fallback data in case the fetch fails
             contentData = [
                 {
                     "title": "Fitness Tip",
